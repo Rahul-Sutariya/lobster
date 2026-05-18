@@ -1,5 +1,5 @@
 {
-    "homepage": "https://github.com/bmw-software-engineering/lobster",
+    "homepage": "https://github.com/Rahul-Sutariya/lobster",
     "maintainers": [
         {
             "email": "rahulsutariya0001@gmail.com",
@@ -15,7 +15,7 @@
         }
     ],
     "repository": [
-        "github:bmw-software-engineering/lobster"
+        "github:Rahul-Sutariya/lobster"
     ],
     "versions": [],
     "yanked_versions": {}
