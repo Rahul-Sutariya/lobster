@@ -1,7 +1,7 @@
 module(
     name = "lobster",
     compatibility_level = 1,
-    version = "0.13.2",
+    version = "1.0.4",
 )
 
 bazel_dep(
