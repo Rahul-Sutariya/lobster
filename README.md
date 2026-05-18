@@ -217,3 +217,16 @@ The following inputs are planned but not implemented yet:
 The copyright holder of LOBSTER is the Bayerische Motoren Werke
 Aktiengesellschaft (BMW AG), and LOBSTER is published under the [GNU
 Affero General Public License, Version 3](LICENSE.md).
+
+## Automated Release Flow
+
+Releases are automated through GitHub Actions:
+
+* Push a release tag using the format `lobster-X.Y.Z`.
+* Workflow `.github/workflows/release.yml` creates a draft GitHub release and uploads `lobster-X.Y.Z.tar.gz`.
+* Workflow `.github/workflows/publish.yml` opens a Bazel Central Registry PR through `publish-to-bcr`.
+* After the BCR publish succeeds, the release is finalized, which triggers `.github/workflows/package.yml` to publish the Python packages to PyPI.
+
+Required repository secret:
+
+* `BCR_PUBLISH_TOKEN`: Classic PAT with `workflow` and `repo` scopes, with access to your BCR fork. The default workflow input points to `Rahul-Sutariya/bazel-central-registry` and can be overridden when dispatching the workflow.
