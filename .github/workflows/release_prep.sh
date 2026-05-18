@@ -25,13 +25,13 @@ cat <<EOF
 
 Add this to your MODULE.bazel:
 
-```starlark
+~~~starlark
 bazel_dep(name = "lobster", version = "${VERSION}")
-```
+~~~
 
 ## WORKSPACE
 
-```starlark
+~~~starlark
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
@@ -40,5 +40,5 @@ http_archive(
     strip_prefix = "${PREFIX}",
     urls = ["https://github.com/bmw-software-engineering/lobster/releases/download/${TAG}/${TAG}.tar.gz"],
 )
-```
+  ~~~
 EOF
