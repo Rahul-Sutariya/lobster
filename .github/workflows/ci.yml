@@ -205,8 +205,6 @@ jobs:
       - lint-system-tests
       - trlc
       - test
-      - integration-tests
-      - bazel-integration
     if: ${{ failure() || cancelled() }}
     runs-on: ubuntu-24.04
     steps:
