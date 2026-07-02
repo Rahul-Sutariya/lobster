@@ -198,17 +198,4 @@ jobs:
           repository-cache: true
       - uses: actions/checkout@v4
       - run: bazel test //tests_system/... //tests_unit/...
-  failure:
-    name: Check all jobs
-    needs:
-      - lint-code
-      - lint-system-tests
-      - trlc
-      - test
-      - integration-tests
-      - bazel-integration
-    if: ${{ failure() || cancelled() }}
-    runs-on: ubuntu-24.04
-    steps:
-      - name: Failure
-        run: exit 1
+ 
