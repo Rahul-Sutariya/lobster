@@ -9,7 +9,11 @@ on:
       registry_fork:
         required: false
         type: string
-        default: bmw-software-engineering/bazel-central-registry
+        default: Rahul-Sutariya/bazel-central-registry
+      registry:
+        required: false
+        type: string
+        default: Rahul-Sutariya/bazel-central-registry
     secrets:
       BCR_PUBLISH_TOKEN:
         required: true
@@ -23,7 +27,12 @@ on:
         description: GitHub fork used to open the BCR PR (owner/repo)
         required: false
         type: string
-        default: bmw-software-engineering/bazel-central-registry
+        default: Rahul-Sutariya/bazel-central-registry
+      registry:
+        description: Registry the BCR PR is opened against (owner/repo)
+        required: false
+        type: string
+        default: Rahul-Sutariya/bazel-central-registry
 
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
@@ -34,6 +43,7 @@ jobs:
     with:
       tag_name: ${{ inputs.tag_name }}
       registry_fork: ${{ inputs.registry_fork }}
+      registry: ${{ inputs.registry }}
       draft: false
       attest: true
       tag_prefix: "lobster-"
